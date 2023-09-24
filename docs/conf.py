@@ -31,6 +31,7 @@ extensions = [
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
 }
+
 PY_CLASS = "py:class"
 PY_RE = r"py:.*"
 PY_METH = "py:meth"
@@ -89,7 +90,7 @@ html_logo = "_static/logo.png"
 html_context = {
     "source_type": "github",
     "source_user": "python-reddit",
-    "source_repo": project.replace("_", "-"),
+    "source_repo": "python",
 }
 
 brand_colors = {
