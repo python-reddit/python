@@ -1,11 +1,14 @@
 # Configuration file for the Sphinx documentation builder.
 import os
-
-from src.__metadata__ import __project__ as project
-from src.__metadata__ import __version__ as version
+import sys
+from pathlib import Path
 
 # -- Environmental Data ------------------------------------------------------
+path = Path("..").resolve()
+sys.path.insert(0, path.as_posix())
 
+from src.__metadata__ import __project__ as project  # noqa: E402
+from src.__metadata__ import __version__ as version  # noqa: E402
 
 # -- Project information -----------------------------------------------------
 project = project
