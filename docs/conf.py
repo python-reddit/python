@@ -1,11 +1,14 @@
 # Configuration file for the Sphinx documentation builder.
 import os
-
-from src.__metadata__ import __project__ as project
-from src.__metadata__ import __version__ as version
+import sys
+from pathlib import Path
 
 # -- Environmental Data ------------------------------------------------------
+path = Path("..").resolve()
+sys.path.insert(0, path.as_posix())
 
+from src.__metadata__ import __project__ as project  # noqa: E402
+from src.__metadata__ import __version__ as version  # noqa: E402
 
 # -- Project information -----------------------------------------------------
 project = project
@@ -31,6 +34,7 @@ extensions = [
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
 }
+
 PY_CLASS = "py:class"
 PY_RE = r"py:.*"
 PY_METH = "py:meth"
@@ -89,7 +93,7 @@ html_logo = "_static/logo.png"
 html_context = {
     "source_type": "github",
     "source_user": "python-reddit",
-    "source_repo": project.replace("_", "-"),
+    "source_repo": "python",
 }
 
 brand_colors = {
