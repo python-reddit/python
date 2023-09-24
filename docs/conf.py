@@ -9,8 +9,8 @@ from src.__metadata__ import __version__ as version
 
 # -- Project information -----------------------------------------------------
 project = project
-author = "Jolt Org"
-release = os.getenv("_PYTHON-REDDIT_DOCS_BUILD_VERSION", version.rsplit(".")[0])
+author = "Python Reddit"
+release = os.getenv("_PYTHON_DOCS_BUILD_VERSION", version.rsplit(".")[0])
 copyright = "2023, Python Reddit"
 
 # -- General configuration ---------------------------------------------------
