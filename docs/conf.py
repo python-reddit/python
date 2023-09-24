@@ -55,8 +55,7 @@ nitpick_ignore = [
     (PY_CLASS, "AsyncSession"),
     (PY_CLASS, "Select"),
 ]
-nitpick_ignore_regex = [
-]
+nitpick_ignore_regex = []
 
 napoleon_google_docstring = True
 napoleon_include_special_with_doc = True

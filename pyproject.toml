@@ -96,3 +96,6 @@ classmethod-decorators = [
 
 [tool.ruff.isort]
 known-first-party = ["src", "tests"]
+
+[tool.ruff.per-file-ignores]
+"docs/**/*" = ["D", "INP", "PLW", "A"]
