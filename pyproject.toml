@@ -1,0 +1,98 @@
+[project]
+name = "python-reddit"
+version = "0.1.0"
+description = "Project for managing the r/Python Reddit"
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Jacob Coffee", email = "jacob@z7x.org"},
+]
+dependencies = [
+    "arrow>=1.2.3",
+    "icalendar>=5.0.9",
+    "httpx>=0.25.0",
+]
+
+[tool.pdm.dev-dependencies]
+lint = [
+    "black>=23.9.1",
+    "blacken-docs>=1.16.0",
+    "mypy>=1.5.1",
+    "pre-commit>=3.4.0",
+    "pyright>=1.1.327",
+    "ruff>=0.0.291",
+    "sourcery>=1.10.0",
+]
+docs = [
+    "blacken-docs>=1.16.0",
+    "sphinx>=7.2.6",
+    "sphinx-autobuild>=2021.3.14",
+    "sphinx-copybutton>=0.5.2",
+    "sphinxcontrib-mermaid>=0.9.2",
+    "shibuya>=2023.9.3",
+    "sphinx-toolbox>=3.5.0",
+    "sphinx-design>=0.5.0",
+]
+
+[tool.black]
+line-length = 120
+include = '\.pyi?$'
+
+[tool.codespell]
+ignore-words-list = "selectin"
+skip = 'pdm.lock'
+
+[tool.coverage.run]
+omit = ["*/tests/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    'pragma: no cover',
+    'if TYPE_CHECKING:',
+    'raise NotImplementedError',
+]
+
+[tool.pytest.ini_options]
+# addopts = "--ignore=examples"
+asyncio_mode = "auto"
+
+[tool.pyright]
+include = ["src"]
+exclude = ["tools"]
+
+[tool.slotscheck]
+strict-imports = false
+
+[tool.mypy]
+
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+warn_unreachable = true
+warn_return_any = true
+strict = true
+disallow_untyped_decorators = true
+disallow_any_generics = false
+implicit_reexport = false
+show_error_codes = true
+
+[tool.ruff]
+select = ["ALL"]
+line-length = 120
+src = ["src", "tests"]
+target-version = "py311"
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.mccabe]
+max-complexity = 12
+
+[tool.ruff.pep8-naming]
+classmethod-decorators = [
+    "classmethod",
+]
+
+[tool.ruff.isort]
+known-first-party = ["src", "tests"]
